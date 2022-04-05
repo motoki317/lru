@@ -58,6 +58,13 @@ func (c *SyncCache[K, V]) Delete(key K) bool {
 	return c.cache.Delete(key)
 }
 
+// DeleteOldest deletes the oldest item from the cache.
+func (c *SyncCache[K, V]) DeleteOldest() {
+	c.mu.Lock()
+	defer c.mu.Unlock()
+	c.cache.DeleteOldest()
+}
+
 // Flush deletes all items from the cache.
 func (c *SyncCache[K, V]) Flush() {
 	c.mu.Lock()
