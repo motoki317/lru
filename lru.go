@@ -96,10 +96,12 @@ func (c *Cache[K, V]) Delete(key K) bool {
 }
 
 // DeleteOldest deletes the oldest item from the cache.
-func (c *Cache[K, V]) DeleteOldest() {
+func (c *Cache[K, V]) DeleteOldest() (key K, value V, ok bool) {
 	if e := c.ll.Back(); e != nil {
 		c.deleteElement(e)
+		return e.Value.key, e.Value.value, true
 	}
+	return
 }
 
 func (c *Cache[K, V]) deleteElement(e *internal.Element[entry[K, V]]) {
