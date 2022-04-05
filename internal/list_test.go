@@ -3,7 +3,7 @@ package internal_test
 import (
 	"testing"
 
-	"github.com/dboslee/lru/internal"
+	"github.com/motoki317/lru/internal"
 
 	"github.com/stretchr/testify/require"
 )

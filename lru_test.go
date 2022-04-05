@@ -3,8 +3,9 @@ package lru_test
 import (
 	"testing"
 
-	"github.com/dboslee/lru"
 	"github.com/stretchr/testify/require"
+
+	"github.com/motoki317/lru"
 )
 
 func TestCapacity(t *testing.T) {

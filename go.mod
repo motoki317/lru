@@ -1,4 +1,4 @@
-module github.com/dboslee/lru
+module github.com/motoki317/lru
 
 go 1.18
 
